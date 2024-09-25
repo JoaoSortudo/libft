@@ -4,10 +4,10 @@ COMP = cc -Wall -Werror -Wextra
 
 SRC = ft_isalnum.c
 
-OBJ = $(SRC: .c = .o)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-	$(COMP) $(OBJ) -o $(NAME)
+	$(COMP) $(SRC) -o
 
 clean:
 	rm -f $(OBJ)

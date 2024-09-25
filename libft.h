@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.h                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:57:57 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/09/24 12:12:05 by jpires-n         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:37:02 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HELLO_H
-# define HELLO_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	hello_pt(void);
-void	hello_en(void);
-void	hello_fr(void);
+int	ft_isalnum(char *str);
 
 #endif

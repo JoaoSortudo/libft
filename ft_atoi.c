@@ -6,11 +6,11 @@
 /*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:35:59 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/07/01 20:15:06 by jpires-n         ###   ########.fr       */
+/*   Updated: 2024/09/25 17:28:51 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;
