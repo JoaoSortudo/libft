@@ -9,10 +9,10 @@
 /*   Updated: 2024/06/26 21:52:25 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
-int	ft_str_is_alpha(char *str)
+
+#include "libft.h"
+
+int	ft_isalpha(char *str)
 {
 	int	i;
 

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 11:57:46 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/09/25 13:50:01 by jpires-n         ###   ########.fr       */
+/*   Created: 2024/09/26 11:28:30 by jpires-n          #+#    #+#             */
+/*   Updated: 2024/09/26 11:52:00 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "hello.h"
+#include "libft.h"
 
-void	hello_pt(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	printf("Olá, mundo!\n");
-}
+	unsigned char *d = (unsigned char *)dest;
+	const unsigned char *s = (const unsigned char *)src;
 
-void	hello_en(void)
-{
-	printf("Hello, world!\n");
-}
-
-void	hello_fr(void)
-{
-	printf("Salut, le monde!\n");
+	while (n--)
+	{
+		*d++ = *s++;
+	}
+	return (dest);
 }

@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 14:29:30 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/09/26 11:15:28 by jpires-n         ###   ########.fr       */
+/*   Created: 2024/09/26 10:35:40 by jpires-n          #+#    #+#             */
+/*   Updated: 2024/09/26 11:12:17 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_isalnum(char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	unsigned char *p = (unsigned char *)s;
 
-	i = 0;
-	while (str[i] != '\0')
+	while (n--)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-			|| (str[i] >= 'A' && str[i] <= 'Z')
-			|| (str[i] >= '0' && str[i] <= '9'))
-		{
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
+		*p++ = '\0';
 	}
-	return (1);
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
 
 int	main(int argc, char **argv)
 {
-	printf("é alfabetico?(1=sim, 0=nao)\n%d\n", ft_isalnum(argv[1]));
+	char str1[10] = "Joao";
+        char str2[10] = "Joao";
+        printf("----------\nAntes do ft_bzero: %s\n----------\nAntes do bzero: %s", str1, str2);
+        ft_bzero(str1, atoi(argv[1]));
+        bzero(str2, atoi(argv[1]));
+	printf("\n----------\nDepois do ft_bzero: %s\n----------\nDepois do bzero: %s\n", str1, str2);
+
 	return (argc);
 }

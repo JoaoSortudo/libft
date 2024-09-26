@@ -1,47 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 16:35:59 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/09/25 17:28:51 by jpires-n         ###   ########.fr       */
+/*   Created: 2024/09/26 08:53:18 by jpires-n          #+#    #+#             */
+/*   Updated: 2024/09/26 12:34:46 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
-	int	result;
-	int	symb;
-
-	result = 0;
-	symb = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
-		i++;
-	while (str[i] != '\0' && (str[i] == '+' || str[i] == '-'))
+	unsigned char *p = (unsigned char *)s;
+	
+	while (n--)
 	{
-		if (str[i] == '-')
-			symb *= -1;
-		i++;
+		*p++ = (unsigned char)c;
 	}
-	while (str[i] > 47 && str[i] < 58)
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * symb);
+	return (s);
 }
-/*
+
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
-	printf("esse é o inteiro:%d",ft_atoi(argv[1]));
+	char str1[10] = "Joao";
+	char str2[10] = "Joao";
+	printf("----------\nAntes do ft_memset: %s\n----------\nAntes do memset: %s", str1, str2);
+	ft_memset(str1, 'j', atoi(argv[1]));
+	memset(str2, 'j', atoi(argv[1]));
+	printf("\n----------\nDepois do ft_memset: %s\n----------\nDepois do memset: %s\n", str1, str2);
 	return (argc);
-}*/
+}

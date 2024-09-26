@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+#include "libft.h"
+
+int	ft_isdigit(char *str)
 {
 	int	i;
 
