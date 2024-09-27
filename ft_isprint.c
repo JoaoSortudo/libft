@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpires-n <luckyjoey13@gmail.com>           +#+  +:+       +#+        */
+/*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 22:42:20 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/06/26 21:53:06 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-09-27 15:56:43 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-09-27 15:56:43 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_str_is_printable(char *str)
+int	ft_str_is_printable(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 32 && str[i] <= 126)
-		{
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

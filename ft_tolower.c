@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpires-n <jpires-n@student.42.rio>         +#+  +:+       +#+        */
+/*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:16:08 by jpires-n          #+#    #+#             */
-/*   Updated: 2024/09/11 13:34:38 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-09-27 15:39:29 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-09-27 15:39:29 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlowcase(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] += 32;
-		}
-		i++;
-	}
-	return (str);
-}
-
-#include <stdio.h>
-
-int	main(int argc, char *argv[])
-{
-	printf("%s", ft_strlowcase(argv[1]));
-	return (argc);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
