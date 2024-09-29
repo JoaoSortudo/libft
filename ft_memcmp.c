@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-27 17:19:18 by jpires-n          #+#    #+#             */
-/*   Updated: 2024-09-27 17:19:18 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-09-29 16:05:22 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-09-29 16:05:22 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
-	char	*str;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
-	str = (char *)s;
-	i = ft_strlen(s);
-	while (i >= 0)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		if (str[i] == (unsigned char)c)
-			return (str + i);
-		i--;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
-	if (c == '\0')
-		return (str + ft_strlen(s));
 	return (0);
 }
 
 // #include <stdio.h>
 // #include <string.h>
 
-// int	main(int argc, char **argv)
+// int     main(void)
 // {
-// 	const char	str[20] = "Oi, eu sou o goku!";
-// 	//int			c = 'e';
-// 	printf("strrchr: %s\n", strrchr(str, atoi(argv[1])));
-// 	printf("ft_strchr: %s\n", ft_strrchr(str, atoi(argv[1])));
-// 	return (argc);
+// 	char    str1[] = "joao";
+// 	char    str2[] = "Joao";
+// 	printf("\n%d\n", ft_memcmp(str1, str2, 0));
+// 	printf("\n%d\n", memcmp(str1, str2, 0));
 // }

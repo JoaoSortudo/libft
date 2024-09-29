@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-27 17:19:18 by jpires-n          #+#    #+#             */
-/*   Updated: 2024-09-27 17:19:18 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-09-29 15:22:05 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-09-29 15:22:05 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	char	*str;
+	size_t	i;
 
-	str = (char *)s;
-	i = ft_strlen(s);
-	while (i >= 0)
+	i = 0;
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		if (str[i] == (unsigned char)c)
-			return (str + i);
-		i--;
+		if (s1[i] > s2[i])
+		{
+			return (1);
+		}
+		else if (s1[i] < s2[i])
+		{
+			return (-1);
+		}
+		i++;
 	}
-	if (c == '\0')
-		return (str + ft_strlen(s));
 	return (0);
 }
 
 // #include <stdio.h>
 // #include <string.h>
 
-// int	main(int argc, char **argv)
+// int     main(void)
 // {
-// 	const char	str[20] = "Oi, eu sou o goku!";
-// 	//int			c = 'e';
-// 	printf("strrchr: %s\n", strrchr(str, atoi(argv[1])));
-// 	printf("ft_strchr: %s\n", ft_strrchr(str, atoi(argv[1])));
-// 	return (argc);
+// 		char    str1[] = "oiehahah";
+// 		char    str2[] = "oie";
+// 		printf("\n%d\n", ft_strncmp(str1, str2, 7));
+// 		printf("\n%d\n", strncmp(str1, str2, 7));
 // }

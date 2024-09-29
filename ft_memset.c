@@ -24,17 +24,19 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
 
-int	main(int argc, char **argv)
-{
-	char str1[10] = "Joao";
-	char str2[10] = "Joao";
-	printf("----------\nAntes do ft_memset: %s\n----------\nAntes do memset: %s", str1, str2);
-	ft_memset(str1, 'j', atoi(argv[1]));
-	memset(str2, 'j', atoi(argv[1]));
-	printf("\n----------\nDepois do ft_memset: %s\n----------\nDepois do memset: %s\n", str1, str2);
-	return (argc);
-}
+// int	main(int argc, char **argv)
+// {
+// 	char str1[10] = "Joao";
+// 	char str2[10] = "Joao";
+// 	printf("----------\nAntes do ft_memset: %s
+//\n----------\nAntes do memset: %s", str1, str2);
+// 	ft_memset(str1, 'j', atoi(argv[1]));
+// 	memset(str2, 'j', atoi(argv[1]));
+// 	printf("\n----------\nDepois do ft_memset: %s
+//\n----------\nDepois do memset: %s\n", str1, str2);
+// 	return (argc);
+// }

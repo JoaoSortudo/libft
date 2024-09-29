@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-27 15:51:50 by jpires-n          #+#    #+#             */
-/*   Updated: 2024-09-27 15:51:50 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-09-29 17:20:56 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-09-29 17:20:56 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if ((c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z'))
+	if (c >= '0' && c <= '127')
 		return (1);
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("é alfabetico?(1=sim, 0=nao)\n%d\n", ft_str_is_alpha("euu"));
-}*/
