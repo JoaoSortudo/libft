@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//STRDUP FALTA RETORNAR NULO EM CASO DE ERRO!!
 char	*ft_strdup(const char *s)
 {
 	char	*dup;
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 
 	dup = malloc(ft_strlen(s) + 1);
 	i = 0;
+	if (dup == 0)
+		return (0);
 	while (s[i])
 	{
 		dup[i] = s[i];

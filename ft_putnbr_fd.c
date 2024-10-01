@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-27 15:56:43 by jpires-n          #+#    #+#             */
-/*   Updated: 2024-09-27 15:56:43 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-10-01 15:05:30 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-10-01 15:05:30 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		if (nb == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			nb = -147483648;
+		}
+		nb *= -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+	}
+	ft_putchar_fd(((nb % 10) + '0'), fd);
 }

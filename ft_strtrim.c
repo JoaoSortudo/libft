@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-n <jpires-n@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-27 15:56:43 by jpires-n          #+#    #+#             */
-/*   Updated: 2024-09-27 15:56:43 by jpires-n         ###   ########.fr       */
+/*   Created: 2024-10-01 14:15:38 by jpires-n          #+#    #+#             */
+/*   Updated: 2024-10-01 14:15:38 by jpires-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	start;
+	size_t	end;
+	char	*trimmed;
+
+	i = 0;
+	trimmed = malloc()
 }
