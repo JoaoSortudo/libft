@@ -16,8 +16,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	char	*trimmed;
+	char	*str;
 
-	i = 0;
-	trimmed = malloc()
+	str = 0;
+	if (s1 && set)
+	{
+		while (s1[start] && ft_strchr(set, s1[start]))
+			start++;
+		while ()
+		{
+			return (0);
+		}
+	}
+	return (str);
 }
