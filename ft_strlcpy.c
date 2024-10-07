@@ -31,25 +31,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (srclen);
 }
-/*
-#include <stdio.h>
-#include <bsd/string.h>
 
-int	main(void)
-{
-	char	str1[20] = "Joao Victor";
-	char	str2[20] = "tchau";
-	char	str2original[20] = "tchau";
+// #include <stdio.h>
+// #include <bsd/string.h>
 
-	printf("----------\nAntes do ft_strlcpy: %s\n----------
-	\nAntes do strlcpy: %s", str2, str2original);	
+// int	main(void)
+// {
+// 	char mystr[] = "";
+// 	char mystr2[] = "JUANA";
+// 	char orstr[] = "";
+// 	char orstr2[] = "JUANA";
 
-	size_t	len1 = ft_strlcpy(str2, str1, 12);
-	size_t	len1original = strlcpy(str2original, str1, 12);
+// 	printf("Minha: %zu\n", ft_strlcpy(mystr, mystr2, 3));
+// 	printf("Minha: %s\n", mystr);
+// 	printf("Original: %zu\n", strlcpy(orstr, orstr2, 3));
+// 	printf("String original: %s\n", orstr);
 
-	printf("\n----------\nDepois do ft_strlcpy: %s\n----------
-	\nDepois do strlcpy: %s\n", str2, str2original);
-	printf("tamanho da src(ft_strlcpy): %zu\n", len1);
-	printf("tamanho da src(strlcpy): %zu\n", len1original);
-	return (0);
-}*/
+// 	return (0);
+// }

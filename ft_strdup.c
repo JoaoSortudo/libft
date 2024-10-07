@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//STRDUP FALTA RETORNAR NULO EM CASO DE ERRO!!
+
 char	*ft_strdup(const char *s)
 {
 	char	*dup;
-	int		i;
+	size_t	i;
 
 	dup = malloc(ft_strlen(s) + 1);
 	i = 0;
-	if (dup == 0)
-		return (0);
+	if (dup == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		dup[i] = s[i];

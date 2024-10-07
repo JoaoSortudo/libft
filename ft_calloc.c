@@ -17,15 +17,15 @@ void	*ft_calloc(size_t qtd, size_t tam)
 	void	*box;
 	size_t	size;
 
+	size = qtd * tam;
+	box = malloc(size);
+	if (box == 0)
+		return (0);
 	if (qtd == 0 || tam == 0)
 	{
 		return (0);
 	}
 	if (size / qtd != tam)
-		return (0);
-	size = qtd * tam;
-	box = malloc(size);
-	if (box == 0)
 		return (0);
 	ft_memset(box, 0, size);
 	return (box);

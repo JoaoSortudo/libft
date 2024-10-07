@@ -25,3 +25,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int	main(void)
+// {
+// 	char	str1[] = "joao";
+// 	char	str2[] = "juana";
+// 	printf("\n%s\n", (char *)ft_memcpy(str1, str2, 2));
+// 	printf("\n%s\n", (char *)memcpy(str1, str2, 2));
+// 	return (0);
+// }

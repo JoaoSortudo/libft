@@ -64,9 +64,9 @@ char	*ft_itoa(int n)
 // 	char *str = ft_itoa(-21);
 // 	if (str) {
 // 		printf("O int foi convertido na string: %s\n", str);
-// 		free(str); // Liberar a memória alocada
+// 		free(str);
 // 	} else {
-// 		printf("Falha na alocação de memória.\n");
+// 		printf("erro na alocação de memória.\n");
 // 	}
 // 	return 0;
 // }

@@ -34,25 +34,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (srclen + dstlen);
 }
-/*
-#include <stdio.h>
-#include <bsd/string.h>
 
-int	main(void)
-{
-	char	oi[10] = "Oi";
-	char	oiOriginal[10] = "Oi";
-	char	e[4] = "eee";
+// #include <stdio.h>
+// #include <bsd/string.h>
 
-	printf("----------\nAntes do ft_strlcat: %s,%s ", oi, e);
-	printf("\n----------\nAntes do strlcat: %s, %s", oiOriginal, e);
+// int	main(void)
+// {
+// 	char *mystr = ft_strdup("123");
+// 	char *mystr2 = ft_strdup("JUANA");
+// 	char orstr[] = "123";
+// 	char orstr2[] = "JUANA";
 
-	size_t	len1 = ft_strlcat(oi, e, 7);
-	size_t	len1original = strlcat(oiOriginal, e, 7);
-
-	printf("\n----------\nDepois do ft_strlcat: %s\n----------
-	\nDepois do strlcat: %s\n", oi, oiOriginal);
-	printf("tamanho da dest concatenada(ft_strlcat): %zu\n", len1);
-	printf("tamanho da dest concatenada(strlcat): %zu\n", len1original);
-	return (0);
-}*/
+// 	printf("Minha: %zu\n", ft_strlcat(mystr, mystr2, 7));
+// 	printf("Minha: %s\n", mystr);
+// 	printf("Original: %zu\n", strlcat(orstr, orstr2, 7));
+// 	printf("String original: %s\n", orstr);
+// 	return (0);
+// }

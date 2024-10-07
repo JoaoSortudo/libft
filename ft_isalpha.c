@@ -22,5 +22,5 @@ int	ft_isalpha(int c)
 /*
 int	main(void)
 {
-	printf("é alfabetico?(1=sim, 0=nao)\n%d\n", ft_str_is_alpha("euu"));
+	printf("é alfabetico?(1=sim, 0=nao)\n%d\n", ft_isalpha("euu"));
 }*/
