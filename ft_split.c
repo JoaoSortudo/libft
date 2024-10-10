@@ -21,39 +21,57 @@ static int	ft_wordcount(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
 			count++;
-		i++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
 	}
 	return (count);
 }
 
-static char	**split(char const *s, char **array, int start, char c)
+static void	cpy(char *array, char const *s, int end)
 {
 	int	i;
-	int	j;
 
 	i = 0;
+	while (i < end)
+	{
+		array[i] = *s;
+		i++;
+		s++;
+	}
+	array[i] = '\0';
+}
+
+static char	**split(char const *s, char **array, char c)
+{
+	int	j;
+	int	i;
+	int	start;
+	int	end;
+
 	j = 0;
+	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c || s[i + 1] == '\0')
-		{
-			if (s[i + 1] == '\0' && s[i] != c)
-				i++;
-			if (i > start)
-			{
-				array[j] = malloc(i - start + 1);
-				if (!array)
-					return (NULL);
-				ft_strlcpy(array[j], &s[start], i - start + 1);
-				j++;
-			}
-			start = i + 1;
-		}
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		start = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		end = i - start;
+		array[j] = (char *) malloc(sizeof(char) * (end + 1));
+		if (!array[j])
+			return (NULL);
+		cpy(array[j++], &s[start], end);
 	}
-	array[j] = NULL;
+	array[j] = 0;
 	return (array);
 }
 
@@ -63,26 +81,22 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	result = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	result = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
 	if (!result)
 		return (NULL);
-	return (split(s, result, 0, c));
+	return (split(s, result, c));
 }
 
 // #include <stdio.h>
 // int	main(void)
 // {
 // 	char **result;
-// 	char *str = "eu estou aqui";
+// 	char *str = "joao";
 // 	char delimiter = ' ';
+
 // 	result = ft_split(str, delimiter);
-// 	int i = 0;
-// 	while (result[i] != NULL)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		//free(result[i]); //liberar cada palavra
-// 		i++;
-// 	}
-// 	//free(result); //liberar o array de strings
+// 	// printf("%s\n", result[0]);
+// 	printf("%s\n", result[1]);
+
 // 	return (0);
 // }

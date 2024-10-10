@@ -31,28 +31,29 @@ static int	ft_digitcount(int nb)
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		size;
-	int		i;
+	char		*result;
+	int			size;
+	int			i;
+	long int	nb;
 
 	size = ft_digitcount(n);
 	result = malloc(size + 1);
+	nb = n;
 	if (!result)
 		return (0);
-	if (n == 0)
+	if (nb == 0)
 		result[0] = '0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		result[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
 	i = size - 1;
 	result[size] = '\0';
-	while (n > 0)
+	while (nb > 0)
 	{
-		result[i] = (n % 10) + '0';
-		n /= 10;
-		i--;
+		result[i--] = (nb % 10) + '0';
+		nb /= 10;
 	}
 	return (result);
 }

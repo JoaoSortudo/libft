@@ -22,11 +22,28 @@ void	*ft_calloc(size_t qtd, size_t tam)
 	if (box == 0)
 		return (0);
 	if (qtd == 0 || tam == 0)
-	{
 		return (0);
-	}
 	if (size / qtd != tam)
 		return (0);
 	ft_memset(box, 0, size);
 	return (box);
 }
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include "libft.h"
+
+// int main(void)
+// {
+// 	char *str;
+// 	char *str2 = "joao";
+// 	int	i = 0;
+
+// 	str = ft_calloc(5, sizeof(char));
+// 	while (str2[i] != '\0')
+// 	{
+// 		str[i] = str2[i];
+// 		i++;
+// 	}
+// 	str[i] = '\0';
+//     return (0);
+// }
