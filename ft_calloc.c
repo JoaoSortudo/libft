@@ -12,20 +12,20 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t qtd, size_t tam)
+void	*ft_calloc(size_t qt, size_t size)
 {
 	void	*box;
-	size_t	size;
+	size_t	box_size;
 
-	size = qtd * tam;
-	box = malloc(size);
+	box_size = qt * size;
+	if (box_size / qt != size)
+		return (0);
+	box = malloc(box_size);
 	if (box == 0)
 		return (0);
-	if (qtd == 0 || tam == 0)
+	if (qt == 0 || size == 0)
 		return (box);
-	if (size / qtd != tam)
-		return (0);
-	ft_memset(box, 0, size);
+	ft_memset(box, 0, box_size);
 	return (box);
 }
 // #include <stdio.h>
